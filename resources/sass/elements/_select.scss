@@ -1,0 +1,24 @@
+/*
+ * Copyright (c) 2025 Martin Pettersson
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+@use "settings/spacings";
+
+select {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    cursor: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    height: max-content;
+    line-height: 1.2;
+    margin: 0;
+    max-width: 32ch;
+    min-width: 16ch;
+    outline: none;
+    padding: spacings.$small;
+}

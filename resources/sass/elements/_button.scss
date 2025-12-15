@@ -1,0 +1,28 @@
+/*
+ * Copyright (c) 2025 Martin Pettersson
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+@use "settings/roundings";
+@use "settings/spacings";
+
+button {
+    align-items: center;
+    appearance: none;
+    background: none;
+    border-radius: roundings.$medium;
+    border: 0;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-flex;
+    font-size: 0.9rem;
+    gap: spacings.$small;
+    height: max-content;
+    justify-content: center;
+    position: relative;
+    text-decoration: none;
+    white-space: nowrap;
+    width: max-content;
+}

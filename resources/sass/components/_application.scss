@@ -1,0 +1,31 @@
+/*
+ * Copyright (c) 2025 Martin Pettersson
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+@use "settings/spacings";
+
+.application {
+    box-sizing: border-box;
+    display: grid;
+    gap: spacings.$medium;
+    grid-template-areas: "visualization" "controls";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+    left: 0;
+    padding: spacings.$medium;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &__visualization {
+        grid-area: visualization;
+    }
+
+    &__visualization-controls {
+        grid-area: controls;
+    }
+}

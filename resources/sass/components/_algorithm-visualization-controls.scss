@@ -1,0 +1,96 @@
+/*
+ * Copyright (c) 2025 Martin Pettersson
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+@use "sass:color";
+@use "settings/blur";
+@use "settings/colors";
+@use "settings/roundings";
+@use "settings/spacings";
+
+.algorithm-visualization-controls {
+    align-items: center;
+    background: colors.$background;
+    display: flex;
+    gap: spacings.$medium;
+    user-select: none;
+
+    .icon {
+        font-size: 2rem;
+    }
+
+    &__item-count {
+        left: 50%;
+        position: fixed;
+        text-align: center;
+        top: spacings.$medium;
+        transform: translateX(-50%);
+        width: 24em;
+
+        &::before {
+            backdrop-filter: blur(blur.$medium);
+            background: color.adjust(colors.$background, $alpha: -0.8);
+            border-radius: roundings.$small;
+            content: "";
+            height: calc(100% + 1em + 2em);
+            left: -0.5em;
+            position: absolute;
+            top: -0.5em;
+            width: calc(100% + 1em);
+            z-index: -1;
+        }
+
+        > input {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: spacings.$medium;
+        }
+    }
+
+    &__algorithms {
+        margin-right: auto;
+    }
+
+    &__start-stop {
+        .icon--pause {
+            display: none;
+        }
+
+        &--running {
+            .icon--play {
+                display: none;
+            }
+
+            .icon--pause {
+                display: block;
+            }
+        }
+    }
+
+    &__visualize-comparisons {
+        margin-left: auto;
+    }
+
+    &__speed {
+        height: 3.75em;
+        margin-left: 2em;
+        position: relative;
+        text-align: center;
+        width: 12em;
+
+        .icon {
+            font-size: 2em;
+        }
+
+        > input {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 2em;
+        }
+    }
+}

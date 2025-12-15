@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="urf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="version" content="0.1.0">
+    <meta name="robots" content="noindex">
+    <title>Sorting Algorithm Visualization</title>
+    <style>
+        @import "resources/sass/inline.scss";
+    </style>
+    <link rel="stylesheet" href="/resources/sass/application.scss">
+</head>
+<body>
+    <noscript>
+        <div class="compatibility-message">This visualization requires JavaScript</div>
+    </noscript>
+    <div class="application js-application">
+        <main class="application__visualization algorithm-visualization">
+            <svg class="svg-algorithm-visualization js-svg-algorithm-visualization" viewBox="0 0 240 135">
+                <filter id="outline" filterUnits="userSpaceOnUse">
+                    <feMorphology in="SourceGraphic" result="DILATED" operator="dilate" radius="0.05"/>
+                </filter>
+                <g class="js-svg-algorithm-visualization__bars"></g>
+            </svg>
+        </main>
+        <div class="application__visualization-controls algorithm-visualization-controls js-algorithm-visualization-controls">
+            <label class="algorithm-visualization-controls__item-count">
+                <input
+                    class="js-algorithm-visualization-controls__item-count"
+                    type="range"
+                    min="10"
+                    max="100"
+                    step="10"
+                    value="50"
+                >
+            </label>
+            <label class="algorithm-visualization-controls__algorithms select">
+                <select class="js-algorithm-visualization-controls__algorithms">
+                    <option value="selection">Selection sort</option>
+                    <option value="insertion">Insertion sort</option>
+                    <option value="shell">Shellsort</option>
+                    <option value="merge-top-down">Mergesort (top-down)</option>
+                    <option value="merge-bottom-up">Mergesort (bottom-up)</option>
+                    <option value="quick-two-way-partitioning">Quicksort (two-way partitioning)</option>
+                    <option value="quick-three-way-partitioning">Quicksort (three-way partitioning)</option>
+                </select>
+                {{> icon name="chevron-down"}}
+            </label>
+            <button class="js-algorithm-visualization-controls__reset">
+                {{> icon name="reset"}}
+            </button>
+            <button class="algorithm-visualization-controls__start-stop js-algorithm-visualization-controls__start-stop">
+                {{> icon name="play"}}
+                {{> icon name="pause"}}
+            </button>
+            <button class="js-algorithm-visualization-controls__scramble">
+                {{> icon name="dice"}}
+            </button>
+            <label class="algorithm-visualization-controls__visualize-comparisons checkbox">
+                {{> icon name="comparison"}}
+                <input class="js-algorithm-visualization-controls__visualize-comparisons" type="checkbox">
+            </label>
+            <label class="algorithm-visualization-controls__speed">
+                {{> icon name="speedometer"}}
+                <input
+                    class="js-algorithm-visualization-controls__speed"
+                    type="range"
+                    min="1"
+                    max="50"
+                    step="1"
+                    value="3"
+                >
+            </label>
+        </div>
+    </div>
+    <script type="module" src="/resources/typescript/application.ts"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+    "name": "@martin-pettersson/sorting-algorithms",
+    "description": "Visualization of various sorting algorithms.",
+    "version": "0.1.0",
+    "type": "module",
+    "scripts": {
+        "build": "vite build",
+        "start": "vite serve",
+        "dev": "vite"
+    },
+    "dependencies": {
+        "@n7e/framework": "^0.4.0",
+        "vite-plugin-handlebars": "^2.0.0"
+    },
+    "devDependencies": {
+        "rollup-plugin-visualizer": "^6.0.5",
+        "sass-embedded": "^1.93.3",
+        "terser": "^5.44.1",
+        "vite": "^7.2.6",
+        "vite-plugin-lightningcss": "^0.0.5"
+    },
+    "author": "Martin Pettersson <martin@n7e.se>",
+    "license": "MIT"
+}

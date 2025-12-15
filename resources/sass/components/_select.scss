@@ -1,0 +1,45 @@
+/*
+ * Copyright (c) 2025 Martin Pettersson
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+@use "settings/colors";
+@use "settings/roundings";
+@use "settings/spacings";
+
+.select {
+    align-items: center;
+    background: colors.$background;
+    border-radius: roundings.$small;
+    border: solid 1px colors.$border;
+    display: grid;
+    grid-template-areas: "select";
+    height: max-content;
+    justify-content: space-between;
+    max-width: 32ch;
+    min-width: 16ch;
+    position: relative;
+
+    > .icon {
+        background: colors.$background;
+        grid-area: select;
+        margin-left: calc(100% - 1em);
+        pointer-events: none;
+
+        &::before {
+            background: linear-gradient(to right, transparent, colors.$background);
+            content: "";
+            height: 100%;
+            position: absolute;
+            right: 100%;
+            top: 0;
+            width: 1em;
+        }
+    }
+
+    select {
+        grid-area: select;
+    }
+}

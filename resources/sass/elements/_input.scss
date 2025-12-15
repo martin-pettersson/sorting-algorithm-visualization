@@ -1,0 +1,68 @@
+/*
+ * Copyright (c) 2025 Martin Pettersson
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+@use "sass:color";
+@use "settings/colors";
+@use "settings/roundings";
+
+$range-track-height: 0.25em;
+$range-handle-height: 1.5em;
+
+@mixin range-track {
+    background: colors.$border;
+    border-radius: roundings.$small;
+    border: 0;
+    cursor: pointer;
+    height: $range-track-height;
+    width: 100%;
+}
+
+@mixin range-handle {
+    background: color.adjust(colors.$border, $lightness: 15%);
+    border-radius: roundings.$small;
+    border: solid 1px colors.$border;
+    cursor: pointer;
+    height: $range-handle-height;
+    margin-top: calc((#{$range-handle-height} / 2 - #{$range-track-height} / 2) * -1);
+    width: 0.75em;
+}
+
+input {
+    &[type=checkbox] {
+        appearance: none;
+        background: transparent;
+        margin: 0;
+    }
+
+    &[type=range] {
+        appearance: none;
+        margin: 1em 0;
+        width: 100%;
+
+        &:focus {
+            outline: none;
+        }
+
+        &::-webkit-slider-runnable-track {
+            @include range-track;
+        }
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+
+            @include range-handle;
+        }
+
+        &::-moz-range-track {
+            @include range-track;
+        }
+
+        &::-moz-range-thumb {
+            @include range-handle;
+        }
+    }
+}
