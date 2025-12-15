@@ -12,9 +12,10 @@ import { resolve } from "node:path";
 import { visualizer } from "rollup-plugin-visualizer";
 
 export default defineConfig({
+    base: "",
     publicDir: "resources/public",
     build: {
-        sourcemap: true,
+        sourcemap: false,
         emptyOutDir: true,
         minify: "terser",
         cssMinify: "lightningcss"
