@@ -10,6 +10,7 @@
     },
     "dependencies": {
         "@n7e/framework": "^0.4.0",
+        "@n7e/rng": "^0.1.0",
         "vite-plugin-handlebars": "^2.0.0"
     },
     "devDependencies": {

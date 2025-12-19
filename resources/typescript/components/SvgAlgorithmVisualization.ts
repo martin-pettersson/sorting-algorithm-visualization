@@ -7,7 +7,7 @@
 
 import { wait } from "@martin-pettersson/sorting-algorithms";
 import type { AlgorithmVisualization } from "@martin-pettersson/sorting-algorithms/components/index.js";
-import type { RandomNumberGenerator } from "@martin-pettersson/sorting-algorithms/rng/index.js";
+import type { RandomNumberGenerator } from "@n7e/rng";
 import type {
     SortableItem,
     SortingAlgorithm,

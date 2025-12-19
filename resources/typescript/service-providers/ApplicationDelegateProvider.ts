@@ -10,7 +10,7 @@ import {
     SvgAlgorithmVisualization
 } from "@martin-pettersson/sorting-algorithms/components/index.js";
 import { Application, ApplicationBuilder, DelegateApplicationBuilder, ServiceProvider } from "@n7e/framework";
-import { LinearCongruentialGenerator } from "@martin-pettersson/sorting-algorithms/rng/index.js";
+import { LinearCongruentialGenerator } from "@n7e/rng";
 import { SortingAlgorithmRegistry } from "@martin-pettersson/sorting-algorithms/algorithms/index.js";
 
 /**
